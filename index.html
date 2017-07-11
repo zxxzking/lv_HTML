@@ -39,91 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<h1>Tab Weather Widget</h1>
 	<div class="wrapper">
 		<div id="accordion-wrapper">
-            <div class="slide">
-                <img src="images/1.jpg" />
-				<div class="caption">
-                    <div class="w3layouts-info">
-						<div class="w3layouts-info-top">
-							<h3>17°c</h3>
-							<h4>Rainy</h4>
-							<p>San Francisco</p>
-						</div>
-						<canvas id="rain" width="40" height="40"></canvas>
-						<div class="w3layouts-info-bottom">
-							<h5>December 1 , 2016</h5>
-							<p>Thursday</p>
-						</div>
-					</div>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="images/3.jpg" />
-				<div class="caption">
-                    <div class="w3layouts-info">
-						<div class="w3layouts-info-top">
-							<h3>12°c</h3>
-							<h4>Rainy</h4>
-							<p>San Francisco</p>
-						</div>
-						<canvas id="sleet" width="40" height="40"></canvas>
-						<div class="w3layouts-info-bottom">
-							<h5>December 2 , 2016</h5>
-							<p>Friday</p>
-						</div>
-					</div>
-                </div>
-            </div>
-            <div class="slide">
-				<img src="images/5.jpg" />
-				<div class="caption">
-                    <div class="w3layouts-info">
-						<div class="w3layouts-info-top">
-							<h3>20°c</h3>
-							<h4>Cloudy</h4>
-							<p>San Francisco</p>
-						</div>
-						<canvas id="cloudy" width="40" height="40"></canvas>
-						<div class="w3layouts-info-bottom">
-							<h5>December 3 , 2016</h5>
-							<p>Saturday</p>
-						</div>
-					</div>
-                </div>
-            </div>
-            <div class="slide">
-                <img src="images/4.jpg" />
-				<div class="caption">
-					<div class="w3layouts-info">
-						<div class="w3layouts-info-top">
-							<h3>22°c</h3>
-							<h4>Sunny</h4>
-							<p>San Francisco</p>
-						</div>
-						<canvas id="partly-cloudy-day" width="40" height="40"></canvas>
-						<div class="w3layouts-info-bottom">
-							<h5>December 4 , 2016</h5>
-							<p>Sunday</p>
-						</div>
-					</div>
-				</div>
-            </div>
-            <div class="slide">
-                <img src="images/2.jpg" />
-				<div class="caption">
-					<div class="w3layouts-info">
-						<div class="w3layouts-info-top">
-							<h3>-5°c</h3>
-							<h4>Snowy</h4>
-							<p>San Francisco</p>
-						</div>
-						<canvas id="snow" width="40" height="40"></canvas>
-						<div class="w3layouts-info-bottom">
-							<h5>December 5 , 2016</h5>
-							<p>Monday</p>
-						</div>
-					</div>
-				</div>	
-            </div>
+            <div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>28~35°c/h3><h4>阴</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-11</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>28~36°c/h3><h4>小雨</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-12</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>29~36°c/h3><h4>小雨</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-13</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>29~37°c/h3><h4>小雨</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-14</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>27~37°c/h3><h4>多云</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-15</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>27~36°c/h3><h4>多云</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-16</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>26~36°c/h3><h4>多云</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-17</h5></div></div></div></div>
         </div>
     </div>
 	<!--copyright-->
@@ -164,10 +80,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	$(function(){
 		$.ajax({
 			type:"get",
-			url:"http://localhost:9091/lv/weather/queryWeatherMsg/v1.0?city=shanghai",
+			url:"http://localhost:9091/lv/weather/queryWeatherMsg/v1.0",
 			async:true,
+			data:{
+				city:'shanghai'
+			},
 			success:function(res){
+				var div = '';
+				res = jQuery.parseJSON(res);
+				res = res.result.result.HeWeather5;
+				var temp = res[0];
+				var list = res[0].daily_forecast;
+				for(var i = 0;i<list.length;i++){
+					var obj = list[i];
+					div+='<div class="slide">'+'<img src="images/4.jpg" />'+'<div class="caption">'+'<div class="w3layouts-info">'+
+					'<div class="w3layouts-info-top">'+'<h3>'+obj.tmp.min+'~'+obj.tmp.max+'°c'+'/h3>'+'<h4>'+obj.cond.txt_d+'</h4>'+
+					'<p>'+temp.basic.cnty+' '+temp.basic.city+'</p>'+'</div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom">'+
+					'<h5>'+obj.date+'</h5>'+'</div></div></div></div>'
+				}
+				//$('#accordion-wrapper').html(div);
 				console.log(res);
+				console.log(list)
+				console.log(div)
 			}
 		});
 		

@@ -93,7 +93,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				var list = res[0].daily_forecast;
 				for(var i = 0;i<list.length;i++){
 					var obj = list[i];
-					div+='<div class="slide">'+'<img src="images/4.jpg" />'+'<div class="caption">'+'<div class="w3layouts-info">'+
+					var x = i+1;
+					div+='<div class="slide">'+'<img src="images/'+x+'.jpg" />'+'<div class="caption">'+'<div class="w3layouts-info">'+
 					'<div class="w3layouts-info-top">'+'<h3>'+obj.tmp.min+'~'+obj.tmp.max+'°c'+'/h3>'+'<h4>'+obj.cond.txt_d+'</h4>'+
 					'<p>'+temp.basic.cnty+' '+temp.basic.city+'</p>'+'</div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom">'+
 					'<h5>'+obj.date+'</h5>'+'</div></div></div></div>'

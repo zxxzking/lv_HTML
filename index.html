@@ -39,7 +39,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<h1>Tab Weather Widget</h1>
 	<div class="wrapper">
 		<div id="accordion-wrapper">
-            <div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>28~35°c/h3><h4>阴</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-11</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>28~36°c/h3><h4>小雨</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-12</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>29~36°c/h3><h4>小雨</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-13</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>29~37°c/h3><h4>小雨</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-14</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>27~37°c/h3><h4>多云</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-15</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>27~36°c/h3><h4>多云</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-16</h5></div></div></div></div><div class="slide"><img src="images/4.jpg" /><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>26~36°c/h3><h4>多云</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-17</h5></div></div></div></div>
+			<div class="slide"><img src="images/3.jpg"><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>28~35°c</h3><h4>多云</h4><p>中国 上海</p></div><canvas id="partly-cloudy-day" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-11</h5></div></div></div></div><div class="slide"><img src="images/7.jpg"><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>28~37°c</h3><h4>小雨</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-12</h5></div></div></div></div><div class="slide"><img src="images/3.jpg"><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>28~37°c</h3><h4>阴</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-13</h5></div></div></div></div><div class="slide"><img src="images/3.jpg"><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>28~36°c</h3><h4>阴</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-14</h5></div></div></div></div><div class="slide"><img src="images/7.jpg"><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>28~37°c</h3><h4>晴</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-15</h5></div></div></div></div><div class="slide"><img src="images/3.jpg"><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>27~35°c</h3><h4>多云</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-16</h5></div></div></div></div><div class="slide"><img src="images/2.jpg"><div class="caption"><div class="w3layouts-info"><div class="w3layouts-info-top"><h3>27~36°c</h3><h4>小雨</h4><p>中国 上海</p></div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom"><h5>2017-07-17</h5></div></div></div></div>
         </div>
     </div>
 	<!--copyright-->
@@ -80,7 +80,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	$(function(){
 		$.ajax({
 			type:"get",
-			url:"http://localhost:9091/lv/weather/queryWeatherMsg/v1.0",
+			url:"http://localhost:9013/lv/weather/queryWeatherMsg/v1.0",
 			async:true,
 			data:{
 				city:'shanghai'
@@ -93,16 +93,22 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				var list = res[0].daily_forecast;
 				for(var i = 0;i<list.length;i++){
 					var obj = list[i];
-					var x = i+1;
+					var x =Math.random()*7+1;
+					x = Math.floor(x);
 					div+='<div class="slide">'+'<img src="images/'+x+'.jpg" />'+'<div class="caption">'+'<div class="w3layouts-info">'+
-					'<div class="w3layouts-info-top">'+'<h3>'+obj.tmp.min+'~'+obj.tmp.max+'°c'+'/h3>'+'<h4>'+obj.cond.txt_d+'</h4>'+
+					'<div class="w3layouts-info-top">'+'<h3>'+obj.tmp.min+'~'+obj.tmp.max+'°c</h3>'+'<h4>'+obj.cond.txt_d+'</h4>'+
 					'<p>'+temp.basic.cnty+' '+temp.basic.city+'</p>'+'</div><canvas id="snow" width="40" height="40"></canvas><div class="w3layouts-info-bottom">'+
 					'<h5>'+obj.date+'</h5>'+'</div></div></div></div>'
+					console.log(x);
 				}
 				//$('#accordion-wrapper').html(div);
-				console.log(res);
-				console.log(list)
-				console.log(div)
+				//$('#accordion-wrapper').prepend(div);
+				
+				var id = $('#accordion-wrapper').html();
+				console.log(id);
+				//console.log(list)
+				//console.log(div)
+				
 			}
 		});
 		
